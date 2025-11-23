@@ -1,213 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Naveed Electrician - Dammam</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naveed Electrician — Dammam (Professional Electrical Services)</title>
+  <meta name="description" content="Naveed Electrician: 24/7 electrician services in Dammam & Eastern Province — wiring, breaker repair, lighting, AC wiring. Contact via WhatsApp +966576482012" />
+  <meta name="keywords" content="electrician, electrical services, Dammam, wiring, breaker, lighting, AC wiring" />
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Favicon (will use logo if present) -->
+  <link rel="icon" href="images/naveedlogo.png">
 
-<style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: #f7f7f7;
-        color: #333;
+  <style>
+    :root{
+      --bg:#0b2140;      /* dark blue */
+      --accent:#ffcc00;  /* electric yellow */
+      --muted:#7b8a9a;
+      --card:#ffffff;
+      --wh:#25D366;
     }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, Poppins, Arial, sans-serif;background:#f2f5f9;color:#142533;line-height:1.45}
+    a{color:inherit}
+    /* Top header */
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--card);box-shadow:0 2px 8px rgba(2,8,23,0.06);position:sticky;top:0;z-index:999}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:52px;border-radius:8px}
+    .brand h1{margin:0;font-size:18px;color:var(--bg)}
+    .top-actions{display:flex;gap:10px;align-items:center}
+    .btn-cta{background:var(--accent);color:#072033;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    .wh-btn{background:var(--wh);color:#072033;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:flex;gap:8px;align-items:center}
 
-    /* Header */
-    header {
-        background: #ffffff;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+    /* Language toggle */
+    .lang-toggle{background:#eef3fb;border-radius:8px;padding:6px;cursor:pointer}
+    .lang-toggle button{background:transparent;border:0;padding:6px 8px;border-radius:6px;font-weight:700;cursor:pointer}
+    .lang-toggle button.active{background:var(--bg);color:white}
 
-    header img {
-        height: 60px;
-    }
-
-    .whatsapp-btn {
-        background: #25D366;
-        padding: 10px 18px;
-        color: white;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    /* Hero Section */
+    /* HERO (uses your uploaded file path). fallback uses first work image */
     .hero {
-        background: url('work1.png') center/cover no-repeat;
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-shadow: 0 2px 6px black;
-        font-size: 30px;
-        font-weight: 600;
-        text-align: center;
-        padding: 20px;
+      position:relative;
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      overflow:hidden;
+    }
+    .hero .bg{
+      position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;
+      filter:brightness(.5);
+    }
+    /* Use uploaded file path as hero background (falls back to images/work1.png) */
+    .hero .bg{background-image: url('/mnt/data/A_website_screenshot_for_Naveed_Electrician_showca.png'), url('images/work1.png');}
+
+    .hero .inner{position:relative;z-index:2;max-width:1100px;padding:28px}
+    .hero h2{font-size:34px;margin:0 0 10px;line-height:1.05}
+    .hero p{margin:0 0 18px;color:rgba(255,255,255,0.95)}
+    .hero .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* layout */
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .grid{display:grid;gap:18px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(3,12,30,0.06)}
+    .service-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffea90);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+
+    /* Stats row */
+    .stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .stat{background:var(--card);padding:18px;border-radius:10px;min-width:150px;text-align:center;box-shadow:0 8px 18px rgba(2,8,23,0.04)}
+
+    /* Slides (work slider) */
+    .work-slider{position:relative;margin-top:8px;border-radius:12px;overflow:hidden}
+    .work-slide{display:none}
+    .work-slide img{width:100%;height:360px;object-fit:cover}
+    .work-slide.active{display:block}
+    .dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#d0d7df;cursor:pointer}
+    .dot.active{background:var(--accent)}
+
+    /* Before/After */
+    .ba-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+    .ba{position:relative;max-width:600px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(2,8,23,0.06)}
+    .ba img{width:100%;height:320px;object-fit:cover;display:block}
+    .ba .after{position:absolute;inset:0;width:50%;overflow:hidden}
+    .ba .handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.9);padding:8px;border-radius:50%;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+
+    /* Reviews carousel */
+    .reviews{display:flex;gap:12px;overflow:hidden;padding:8px}
+    .review{min-width:280px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(2,8,23,0.04)}
+
+    /* Contact form */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+    @media(max-width:980px){.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:720px){
+      .hero{min-height:300px}.hero h2{font-size:22px}.hero p{font-size:14px}
+      .work-slide img{height:220px}.ba img{height:200px}
     }
 
-    /* Section */
-    section {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    /* Services */
-    .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .service-box {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        font-weight: 500;
-    }
-
-    /* Gallery */
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .gallery img {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    /* Reviews */
-    .review-box {
-        background: white;
-        padding: 20px;
-        margin: 10px auto;
-        border-radius: 10px;
-        width: 90%;
-        max-width: 600px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    /* Contact Form */
-    form {
-        max-width: 500px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input, textarea {
-        width: 100%;
-        margin: 10px 0;
-        padding: 12px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        background: #25D366;
-        border: none;
-        border-radius: 6px;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    footer {
-        background: #111;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
-    }
-
-    iframe {
-        border-radius: 10px;
-        width: 100%;
-        height: 300px;
-    }
-</style>
-
+    footer{background:var(--bg);color:white;padding:28px;text-align:center;margin-top:28px}
+    /* floating whatsapp/call */
+    .float-wh{position:fixed;right:16px;bottom:16px;background:var(--wh);padding:14px;border-radius:50%;box-shadow:0 10px 28px rgba(0,0,0,0.18);z-index:999;color:#072033;text-decoration:none;font-size:20px}
+    .float-call{position:fixed;right:16px;bottom:86px;background:var(--bg);padding:12px;border-radius:50%;box-shadow:0 10px 28px rgba(0,0,0,0.12);z-index:999;color:white;text-decoration:none;font-size:18px}
+  </style>
 </head>
 <body>
 
-<header>
-    <img src="images/naveedlogo.png" alt="Naveed Electrician Logo">
-    <a class="whatsapp-btn" href="https://wa.me/966576482012">WhatsApp</a>
-</header>
-
-<div class="hero">Professional Electrician in Dammam</div>
-
-<section>
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="service-box">House Wiring</div>
-        <div class="service-box">Breakers & Fuse Repair</div>
-        <div class="service-box">Lights Installation</div>
-        <div class="service-box">AC Wiring</div>
-        <div class="service-box">Water Pump Repair</div>
-        <div class="service-box">Maintenance & Fixes</div>
+  <!-- TOP -->
+  <div class="topbar">
+    <div class="brand">
+      <img src="images/naveedlogo.png" alt="logo">
+      <div>
+        <h1>Naveed Electrician</h1>
+        <div style="font-size:12px;color:var(--muted)">Dammam • Eastern Province</div>
+      </div>
     </div>
-</section>
 
-<section>
-    <h2>Work Gallery</h2>
-    <div class="gallery">
-        <img src="images/work1.png">
-        <img src="images/work2.png">
-        <img src="images/work3.png">
+    <div class="top-actions">
+      <div class="lang-toggle" aria-hidden>
+        <button id="btn-en" class="active">EN</button>
+        <button id="btn-ar">ع</button>
+      </div>
+      <a class="btn-cta" href="home2.html" title="Open modern full page">Modern Site</a>
+      <a class="wh-btn" href="https://wa.me/966576482012" target="_blank">WhatsApp</a>
     </div>
-</section>
+  </div>
 
-<section>
-    <h2>Customer Reviews</h2>
-    <div class="review-box">⭐⭐⭐⭐⭐ “Very professional and fast service!”</div>
-    <div class="review-box">⭐⭐⭐⭐⭐ “Best electrician in Dammam.”</div>
-    <div class="review-box">⭐⭐⭐⭐ “Affordable and reliable!”</div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="bg" aria-hidden></div>
 
-<section>
-    <h2>Contact Form</h2>
-    <form action="https://formspree.io/f/xqakpaoo" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name=" number" placeholder="Your Phone" required>
-        <input type="email" name="email" placeholder="Your Email">
-        <textarea name="message" rows="5" placeholder="What work do you need?" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+    <div class="inner">
+      <h2 data-en="Professional Electrical Services — Dammam" data-ar="خدمات كهربائية احترافية — الدمام">Professional Electrical Services — Dammam</h2>
+      <p data-en="24/7 quick response for wiring, breaker repair, lighting & AC wiring." data-ar="خدمة سريعة 24/7 للتمديدات، صيانة القواطع، الإضاءة وتوصيل المكيفات.">
+        24/7 quick response for wiring, breaker repair, lighting & AC wiring.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-cta" href="tel:+966576482012">Call Now</a>
+        <a class="btn-cta" href="https://wa.me/966576482012" target="_blank">Request on WhatsApp</a>
+      </div>
+    </div>
+  </section>
 
-<section>
-    <h2>Our Location</h2>
-    <iframe src="https://www.google.com/maps?q=Dammam,+Saudi+Arabia&output=embed"></iframe>
-</section>
+  <!-- MAIN -->
+  <main class="container">
 
-<footer>
-    <p>📞 +966 57 648 2012 | ✉ naveedelectrician2@gmail.com</p>
-    <p>© 2025 Naveed Electrician – Dammam</p>
-</footer>
+    <!-- Services -->
+    <section>
+      <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+      <div class="grid services">
+        <div class="card service-box">
+          <div class="service-icon">⚡</div>
+          <h4 data-en="House Wiring" data-ar="تمديدات المنازل">House Wiring</h4>
+          <p data-en="New wiring, rewiring & safety checks." data-ar="تمديدات جديدة، إعادة تمديدات، وفحوصات أمان.">New wiring, rewiring & safety checks.</p>
+        </div>
+        <div class="card service-box">
+          <div class="service-icon">🔧</div>
+          <h4 data-en="Breaker & DB" data-ar="القواطع واللوحة">Breaker & DB</h4>
+          <p data-en="DB setup, breaker replacement & testing." data-ar="تركيب اللوحات، تغيير القواطع واختبارها.">DB setup, breaker replacement & testing.</p>
+        </div>
+        <div class="card service-box">
+          <div class="service-icon">💡</div>
+          <h4 data-en="Lighting" data-ar="تركيب إضاءات">Lighting</h4>
+          <p data-en="LED, chandeliers, exterior & emergency lighting." data-ar="إضاءات LED، ثريات، إضاءات خارجية وطوارئ.">LED, chandeliers, exterior & emergency lighting.</p>
+        </div>
+        <div class="card service-box">
+          <div class="service-icon">🔌</div>
+          <h4 data-en="Appliance & Heavy Load" data-ar="أجهزة وتقوية دوائر">Appliance & Heavy Load</h4>
+          <p data-en="Dedicated circuits for AC, ovens, heaters." data-ar="دوائر مخصصة للمكيفات، الأفران والسخانات.">Dedicated circuits for AC, ovens, heaters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+      <div class="stats">
+        <div class="stat card"><div style="font-size:22px;font-weight:800">10+</div><div style="color:var(--muted);">Years Experience</div></div>
+        <div class="stat card"><div style="font-size:22px;font-weight:800">2500+</div><div style="color:var(--muted);">Jobs Completed</div></div>
+        <div class="stat card"><div style="font-size:22px;font-weight:800">4.9★</div><div style="color:var(--muted);">Average Rating</div></div>
+      </div>
+    </section>
+
+    <!-- Work slider -->
+    <section>
+      <h2 data-en="Recent Projects" data-ar="أحدث الأعمال">Recent Projects</h2>
+
+      <div class="work-slider card" id="workSlider">
+        <div class="work-slide active"><img src="images/work1.png" alt="work1"></div>
+        <div class="work-slide"><img src="images/work2.png" alt="work2"></div>
+        <div class="work-slide"><img src="images/work3.png" alt="work3"></div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <!-- Before / After -->
+    <section>
+      <h2 data-en="Before & After" data-ar="قبل وبعد">Before & After</h2>
+      <div class="ba-wrap card">
+        <div class="ba" id="ba">
+          <img src="images/work2.png" alt="before (left)">
+          <div class="after"><img src="images/work3.png" alt="after (right)"></div>
+          <div class="handle">⇄</div>
+        </div>
+        <div style="max-width:380px;text-align:left">
+          <h4 data-en="How it works" data-ar="كيف يعمل">How it works</h4>
+          <p data-en="Drag the handle to view before/after. Professional finishing and clean installations." data-ar="اسحب المقبض لعرض قبل/بعد. تشطيب احترافي وتركيبات نظيفة.">Drag the handle to view before/after. Professional finishing and clean installations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section>
+      <h2 data-en="Customer Reviews" data-ar="تقييم العملاء">Customer Reviews</h2>
+      <div class="reviews" id="reviews">
+        <div class="review card"><strong>Ahmed</strong><p>Very fast & honest. Fixed my short circuit quickly.</p></div>
+        <div class="review card"><strong>Salman</strong><p>Professional, clean work. Recommended.</p></div>
+        <div class="review card"><strong>Faisal</strong><p>Good price and on-time service.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact (Form) -->
+    <section>
+      <h2 data-en="Book a Service" data-ar="حجز خدمة">Book a Service</h2>
+
+      <div class="contact-grid">
+        <div>
+          <p data-en="Fill the form and we'll contact you within 1 hour." data-ar="املأ النموذج وسنقوم بالرد خلال ساعة">Fill the form and we'll contact you within 1 hour.</p>
+
+          <div style="margin-top:18px">
+            <div class="card">
+              <h4 data-en="Emergency? Call now" data-ar="حالة طارئة؟ اتصل الآن">Emergency? Call now</h4>
+              <p><a href="tel:+966576482012">+966 57 648 2012</a> • WhatsApp: <a href="https://wa.me/966576482012">Message</a></p>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <form action="https://formsubmit.co/naveedelectrician2@gmail.com" method="POST" class="card">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <label style="font-weight:700">Name</label>
+            <input type="text" name="name" required>
+
+            <label style="font-weight:700">Phone</label>
+            <input type="text" name="phone" required>
+
+            <label style="font-weight:700">Service</label>
+            <input type="text" name="service" placeholder="Wiring, Breaker, Lighting..." required>
+
+            <label style="font-weight:700">Address / Location</label>
+            <input type="text" name="location" placeholder="Dammam, Khobar..." required>
+
+            <label style="font-weight:700">Notes</label>
+            <textarea name="message" rows="3" placeholder="Details..."></textarea>
+
+            <button type="submit">Send Request</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section>
+      <h2 data-en="Our Location" data-ar="موقعنا">Our Location</h2>
+      <!-- centered to Dammam -->
+      <div class="card">
+        <iframe
+          src="https://www.google.com/maps?q=Dammam,+Saudi+Arabia&output=embed"
+          allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating -->
+  <a class="float-call" href="tel:+966576482012">📞</a>
+  <a class="float-wh" href="https://wa.me/966576482012" target="_blank">💬</a>
+
+  <footer>
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="font-weight:700">Naveed Electrician — Dammam</div>
+      <div style="margin-top:6px">Phone: <a href="tel:+966576482012" style="color:#fff;text-decoration:underline">+966 57 648 2012</a> • Email: <a href="mailto:naveedelectrician2@gmail.com" style="color:#fff;text-decoration:underline">naveedelectrician2@gmail.com</a></div>
+      <div style="margin-top:10px; font-size:13px; color:#d8e6ff">© 2025 Naveed Electrician</div>
+    </div>
+  </footer>
+
+<script>
+/* ---------- language toggle (EN / AR) ---------- */
+const btnEn = document.getElementById('btn-en');
+const btnAr = document.getElementById('btn-ar');
+function setLang(lang){
+  document.documentElement.lang = (lang === 'ar') ? 'ar' : 'en';
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  // swap UI texts
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.innerText = (lang === 'ar') ? (el.getAttribute('data-ar') || el.getAttribute('data-en')) : el.getAttribute('data-en');
+  });
+  btnEn.classList.toggle('active', lang === 'en');
+  btnAr.classList.toggle('active', lang === 'ar');
+}
+btnEn.addEventListener('click', ()=>setLang('en'));
+btnAr.addEventListener('click', ()=>setLang('ar'));
+
+/* ---------- work slider auto + dots ---------- */
+let slideIndex = 0;
+const slides = document.querySelectorAll('.work-slide');
+const dotsWrap = document.getElementById('dots');
+function initDots(){
+  dotsWrap.innerHTML = '';
+  slides.forEach((s,i)=>{
+    const d = document.createElement('div'); d.className='dot'; if(i===0) d.classList.add('active');
+    d.addEventListener('click', ()=>showSlide(i));
+    dotsWrap.appendChild(d);
+  });
+}
+function showSlide(n){
+  slides.forEach(s=>s.classList.remove('active'));
+  const dots = dotsWrap.querySelectorAll('.dot');
+  slides[n].classList.add('active'); dots.forEach(d=>d.classList.remove('active')); dots[n].classList.add('active');
+  slideIndex = n;
+}
+function autoSlides(){
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+  setTimeout(autoSlides, 3500);
+}
+initDots(); autoSlides();
+
+/* ---------- before/after handle (simple draggable) ---------- */
+const ba = document.getElementById('ba');
+if(ba){
+  const after = ba.querySelector('.after'), handle = ba.querySelector('.handle'), beforeImg = ba.querySelector('img');
+  function moveAt(x){
+    const rect = ba.getBoundingClientRect();
+    let pct = ((x - rect.left)/rect.width)*100;
+    if(pct < 5) pct = 5; if(pct > 95) pct = 95;
+    after.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  }
+  // init
+  after.style.width = '50%'; handle.style.left = '50%';
+  let dragging=false;
+  handle.addEventListener('mousedown', ()=>dragging=true);
+  window.addEventListener('mouseup', ()=>dragging=false);
+  window.addEventListener('mousemove', e=>{ if(dragging) moveAt(e.clientX); });
+  // touch
+  handle.addEventListener('touchstart', ()=>dragging=true);
+  window.addEventListener('touchend', ()=>dragging=false);
+  window.addEventListener('touchmove', e=>{ if(dragging) moveAt(e.touches[0].clientX); });
+}
+
+/* ---------- reviews auto scroll (simple) ---------- */
+const reviewStrip = document.getElementById('reviews');
+let reviewPos = 0;
+function autoReviews(){
+  reviewPos = (reviewPos + 1) %  (reviewStrip.children.length);
+  const w = reviewStrip.children[0].offsetWidth + 12;
+  reviewStrip.scrollTo({left: reviewPos * w, behavior:'smooth'});
+  setTimeout(autoReviews, 4000);
+}
+autoReviews();
+
+/* ---------- initial language = English ---------- */
+setLang('en');
+</script>
 
 </body>
 </html>
