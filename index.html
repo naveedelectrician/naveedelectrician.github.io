@@ -3,87 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naveed Electrician - Dammam KSA</title>
+  <title>Naveed Electrician – Dammam KSA</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#f2f6fa; color:#333; }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
     header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.imgur.com/Zp0KLgT.jpeg');
-      background-size: cover;
-      background-position: center;
-      padding:80px 20px;
-      color:white; text-align:center;
+      background:url('https://images.unsplash.com/photo-1581090464777-9b6c3ad38629?auto=format&fit=crop&w=1200&q=60');
+      background-size:cover; background-position:center;
+      padding:80px 20px; color:white; text-align:center;
     }
-    header h1 { font-size:40px; margin:0; font-weight:700; }
-    header p { font-size:20px; margin-top:10px; }
-    .btn-main {
-      background:#0a7cff;
-      color:white; padding:14px 25px;
-      border-radius:6px; text-decoration:none;
-      font-size:18px;
-    }
-    .section { width:90%; max-width:1100px; margin:50px auto; }
-    h2 { color:#0a7cff; margin-bottom:20px; }
+    header h1 { font-size: 40px; text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+    header p { font-size: 20px; margin-top:10px; text-shadow:0 2px 5px rgba(0,0,0,0.4); }
 
-    .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-    .card {
-      background:white; padding:20px; border-radius:10px;
-      box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    }
-    .card h3 { margin-top:0; color:#0a7cff; }
+    .container { width:90%; max-width:1100px; margin:auto; padding:20px; background:white; margin-top:20px; border-radius:12px; }
+    h2 { color:#0077cc; margin-bottom:10px; }
 
-    .about, .contact-box {
-      background:white; padding:25px; border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    .card h3 { margin-top:0; color:#0077cc; }
+
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px; }
+    .gallery img { width:100%; border-radius:10px; }
+
+    .btn {
+      display:inline-block; padding:12px 20px; background:#28a745; color:white;
+      text-decoration:none; border-radius:6px; margin-top:10px; font-size:18px;
     }
+
+    .arabic { direction: rtl; text-align:right; margin-top:30px; }
 
     footer {
-      background:#0a7cff; color:white; text-align:center;
-      padding:20px; margin-top:40px;
+      background:#333; color:white; padding:20px; text-align:center; margin-top:20px;
     }
-
-    .whatsapp-btn {
-      display:inline-block; padding:12px 22px;
-      background:#25D366; color:white;
-      border-radius:6px; text-decoration:none;
-      font-size:18px;
+  </style>
+  <style>
+    /* Additional theme and floating buttons */
+    :root { --primary:#0055aa; --accent:#f4b400; }
+    header{ background:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=60'); }
+    .floating-whatsapp{
+      position:fixed; bottom:20px; right:20px; background:#25D366; color:white;
+      padding:15px; border-radius:50%; font-size:24px; text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
     }
+    .floating-call{
+      position:fixed; bottom:90px; right:20px; background:#0077cc; color:white;
+      padding:15px; border-radius:50%; font-size:22px; text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    .logo{
+      text-align:center; margin-top:20px;
+    }
+    .logo img{ width:120px; }
+    .reviews{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .review-box{
+      background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    .contact-form input, .contact-form textarea{
+      width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:6px;
+    }
+    .contact-form button{ background:var(--primary); color:white; padding:12px 20px; border:none; border-radius:6px; }
   </style>
 </head>
 <body>
-
+  <div class="logo"><img src="https://i.imgur.com/GY0YVQh.png" alt="Logo"></div>
 <header>
-  <h1>Naveed Electrician</h1>
-  <p>Professional Electrical Services in Dammam, Saudi Arabia</p>
-  <a class="btn-main" href="https://wa.me/966576482012">Contact on WhatsApp</a>
-</header>
+    <h1>Naveed Electrician – Dammam, Saudi Arabia</h1>
+    <p>Professional Electrical Services • 24/7 Available • Fast & Trusted</p>
+  </header>
 
-<div class="section">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card"><h3>⚡ House Wiring</h3><p>Complete new wiring, repair, short-circuit fixing.</p></div>
-    <div class="card"><h3>💡 Lights Installation</h3><p>LED, chandelier, spotlights, indoor & outdoor lights.</p></div>
-    <div class="card"><h3>🛠 Breaker & DB Repair</h3><p>Distribution board setup, breaker replacement.</p></div>
-    <div class="card"><h3>🏢 Office Electrical Work</h3><p>Commercial wiring, maintenance & electrical setup.</p></div>
-    <div class="card"><h3>🔌 Appliance Repair</h3><p>AC, Water heater, Oven, Washing machine repairs.</p></div>
-    <div class="card"><h3>🚨 Emergency Service</h3><p>24/7 fast & reliable service anywhere in Dammam.</p></div>
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card"><h3>⚡ House Wiring</h3><p>Complete new wiring and repairing work.</p></div>
+      <div class="card"><h3>🔧 Breaker Repair</h3><p>Short circuit fixing, breaker replacement.</p></div>
+      <div class="card"><h3>💡 Lighting Installation</h3><p>LED lights, chandeliers, spotlights installation.</p></div>
+      <div class="card"><h3>🛠 AC & Water Heater</h3><p>AC switch, heater wiring, load fixing.</p></div>
+    </div>
   </div>
-</div>
 
-<div class="section about">
-  <h2>About Me</h2>
-  <p>I am Naveed, a professional electrician with 10+ years of experience in Saudi Arabia. I provide safe, fast, and affordable electrical solutions for homes, offices, and shops in Dammam and nearby areas.</p>
-</div>
+  <div class="container">
+    <h2>Service Prices</h2>
+    <ul>
+      <li>Room wiring – 80–120 SAR</li>
+      <li>Breaker change – 50–70 SAR</li>
+      <li>Light installation – 10–20 SAR per unit</li>
+      <li>Heater connection – 40–60 SAR</li>
+    </ul>
+  </div>
 
-<div class="section contact-box">
-  <h2>Contact</h2>
-  <p>📍 Dammam, Saudi Arabia</p>
-  <p>📞 WhatsApp Only</p>
-  <a class="whatsapp-btn" href="https://wa.me/966576482012">Message on WhatsApp</a>
-</div>
+  <div class="container">
+    <h2>Before / After Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1581092795360-8a9a17a5c5a0?auto=format&fit=crop&w=600&q=60" />
+      <img src="https://images.unsplash.com/photo-1581091012184-5c6a9cbb18b3?auto=format&fit=crop&w=600&q=60" />
+      <img src="https://images.unsplash.com/photo-1581090467948-726873e4f68f?auto=format&fit=crop&w=600&q=60" />
+    </div>
+  </div>
 
-<footer>
-  © 2025 Naveed Electrician - Dammam KSA
-</footer>
+  <div class="container">
+    <h2>Google Map Location</h2>
+    <p>Dammam, Saudi Arabia</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.038702678979!2d50.103!3d26.4207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e63e90cba87b%3A0x63deec95bf2c98b6!2sDammam%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000"
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="container arabic">
+    <h2>خدمات الكهرباء – الدمام</h2>
+    <p>
+      نحن نقدم جميع أعمال الكهرباء في مدينة الدمام – تركيب، صيانة، تمديدات، إصلاح الأعطال، تغيير القواطع، تركيب الإضاءات، وغيرها.
+    </p>
+  </div>
+
+  <div class="container" style="text-align:center;">
+    <a class="btn" href="https://wa.me/966576482012">📞 WhatsApp Now</a>
+  </div>
+
+  <footer>
+    © 2025 Naveed Electrician – Dammam, Saudi Arabia
+  </footer>
+
+<!-- Floating Buttons -->
+<a class="floating-call" href="tel:+966576482012">📞</a>
+<a class="floating-whatsapp" href="https://wa.me/966576482012">💬</a>
+  <!-- Testimonials Section -->
+  <div class="container">
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+      <div class="review-box">“Very fast service! Electric issue solved in 10 minutes.” – Ahmed</div>
+      <div class="review-box">“Professional and honest electrician in Dammam.” – Salman</div>
+      <div class="review-box">“Good price & quality work. Recommended!” – Faisal</div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="container">
+    <h2>Contact Form</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Phone Number" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
 </body>
 </html>
