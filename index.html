@@ -1,299 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveed Electrician - Dammam, Saudi Arabia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naveed Electrician - Dammam</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<header style="display:flex; align-items:center; justify-content:space-between; padding:15px; background:#0d47a1;">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #f7f7f7;
+        color: #333;
+    }
 
-    <!-- Logo -->
-    <div style="display:flex; align-items:center;">
-        <img src="images/naveedlogo.png"
-             alt="Naveed Electrician Logo"
-             style="height:60px; width:auto; margin-right:15px; border-radius:8px;">
-        
-        <h1 style="color:white; margin:0; font-size:24px;">
-            Naveed Electrician Services
-        </h1>
-    </div>
+    /* Header */
+    header {
+        background: #ffffff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/966576482012" target="_blank"
-       style="background:#25D366; color:white; padding:10px 18px; border-radius:6px;
-              font-weight:bold; text-decoration:none; font-size:16px;">
-        WhatsApp
-    </a>
+    header img {
+        height: 60px;
+    }
 
-</header>
+    .whatsapp-btn {
+        background: #25D366;
+        padding: 10px 18px;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+    }
 
+    /* Hero Section */
+    .hero {
+        background: url('work1.png') center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 0 2px 6px black;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        padding: 20px;
+    }
 
+    /* Section */
+    section {
+        padding: 40px 20px;
+        text-align: center;
+    }
 
-        
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f6f9fc;
-        }
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
 
-        /* HEADER */
-        header {
-            background: #0d47a1;
-            color: white;
-            text-align: center;
-            padding: 45px 20px;
-        }
+    /* Services */
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 34px;
-        }
+    .service-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        font-weight: 500;
+    }
 
-        header p {
-            margin: 8px 0 0;
-            font-size: 18px;
-        }
+    /* Gallery */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
 
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+    }
 
+    /* Reviews */
+    .review-box {
+        background: white;
+        padding: 20px;
+        margin: 10px auto;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
+    /* Contact Form */
+    form {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
+    input, textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
 
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #25D366;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
 
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+    }
 
+    iframe {
+        border-radius: 10px;
+        width: 100%;
+        height: 300px;
+    }
+</style>
 
-
-
-
-        
-        /* NAV BAR */
-        nav {
-            background: #002171;
-            padding: 12px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            opacity: 0.7;
-        }
-
-        /* MAIN CONTENT */
-        .container {
-            width: 92%;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        h2 {
-            color: #0d47a1;
-            margin-top: 20px;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .card {
-            background: #e3f2fd;
-            padding: 15px;
-            border-left: 5px solid #0d47a1;
-            border-radius: 8px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #0d47a1;
-            padding: 12px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        /* FLOATING BUTTONS */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            padding: 15px 18px;
-            color: white;
-            border-radius: 50%;
-            font-size: 22px;
-            text-decoration: none;
-        }
-
-        .call-float {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: #0d47a1;
-            padding: 15px 18px;
-            color: white;
-            border-radius: 50%;
-            font-size: 22px;
-            text-decoration: none;
-        }
-
-        footer {
-            background: #002171;
-            color: white;
-            text-align: center;
-            padding: 14px;
-            margin-top: 30px;
-        }
-    </style>
 </head>
-
 <body>
 
 <header>
-    <h1>Naveed Electrician</h1>
-    <p>Dammam • Khobar • Qatif • Dhahran • Jubail</p>
-    <p>Professional Electrical Services – 24/7 Available</p>
+    <img src="images/naveedlogo.png" alt="Naveed Electrician Logo">
+    <a class="whatsapp-btn" href="https://wa.me/966576482012">WhatsApp</a>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <a href="arabic.html">Arabic</a>
-</nav>
+<div class="hero">Professional Electrician in Dammam</div>
 
-<div class="container">
-
-    <h2>Reliable Electrician in Dammam</h2>
-    <p>Complete electrical repair & installation services with more than 10 years of experience in Saudi Arabia.</p>
-
-    <h2>Main Services</h2>
+<section>
+    <h2>Our Services</h2>
     <div class="services">
-        <div class="card">✔ Short Circuit Repair</div>
-        <div class="card">✔ Breaker Installation</div>
-        <div class="card">✔ New Wiring Work</div>
-        <div class="card">✔ Light & Ceiling Installation</div>
-        <div class="card">✔ Water Heater Repair</div>
-        <div class="card">✔ AC Wiring & Maintenance</div>
+        <div class="service-box">House Wiring</div>
+        <div class="service-box">Breakers & Fuse Repair</div>
+        <div class="service-box">Lights Installation</div>
+        <div class="service-box">AC Wiring</div>
+        <div class="service-box">Water Pump Repair</div>
+        <div class="service-box">Maintenance & Fixes</div>
     </div>
+</section>
 
-    <a class="btn" href="https://wa.me/966576482012">WhatsApp Now</a>
+<section>
+    <h2>Work Gallery</h2>
+    <div class="gallery">
+        <img src="images/work1.png">
+        <img src="images/work2.png">
+        <img src="images/work3.png">
+    </div>
+</section>
 
-    <h2>Service Areas</h2>
-    <p>Dammam • Khobar • Qatif • Jubail • Dhahran • Saihat</p>
-</div>
+<section>
+    <h2>Customer Reviews</h2>
+    <div class="review-box">⭐⭐⭐⭐⭐ “Very professional and fast service!”</div>
+    <div class="review-box">⭐⭐⭐⭐⭐ “Best electrician in Dammam.”</div>
+    <div class="review-box">⭐⭐⭐⭐ “Affordable and reliable!”</div>
+</section>
 
-<a class="whatsapp-float" href="https://wa.me/966576482012">💬</a>
-<a class="call-float" href="tel:+966576482012">📞</a>
+<section>
+    <h2>Contact Form</h2>
+    <form action="https://formspree.io/f/xqakpaoo" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name=" number" placeholder="Your Phone" required>
+        <input type="email" name="email" placeholder="Your Email">
+        <textarea name="message" rows="5" placeholder="What work do you need?" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<section>
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps?q=Dammam,+Saudi+Arabia&output=embed"></iframe>
+</section>
 
 <footer>
-    © 2025 Naveed Electrician | Professional Services in Eastern Province, Saudi Arabia
+    <p>📞 +966 57 648 2012 | ✉ naveedelectrician2@gmail.com</p>
+    <p>© 2025 Naveed Electrician – Dammam</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-<h2 style="text-align:center; margin-top:40px;">Book a Service</h2>
-
-<div style="
-    max-width:600px;
-    margin:20px auto;
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.1);
-    font-family:Arial;
-">
-
-<form action="https://formsubmit.co/naveedelectrician2@gmail.com" method="POST" style="width:100%;">
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <div style="flex:1; min-width:230px;">
-            <label>Name</label>
-            <input type="text" name="name" required 
-            style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px;">
-        </div>
-
-        <div style="flex:1; min-width:230px;">
-            <label>Phone Number</label>
-            <input type="text" name="phone" required 
-            style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px;">
-        </div>
-    </div>
-
-    <label style="margin-top:15px; display:block;">Email</label>
-    <input type="email" name="email" required 
-    style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px;">
-
-    <label style="margin-top:15px; display:block;">Service Needed</label>
-    <input type="text" name="service" required placeholder="AC repair, Wiring, Light installation..."
-    style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px;">
-
-    <label style="margin-top:15px; display:block;">Work Location</label>
-    <input type="text" name="location" required placeholder="Dammam, Khobar, Qatif, Jubail..."
-    style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px;">
-
-    <label style="margin-top:15px; display:block;">Complete Address</label>
-    <textarea name="address" required 
-    style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px; height:90px;"></textarea>
-
-    <label style="margin-top:15px; display:block;">Extra Notes</label>
-    <textarea name="message" placeholder="Explain your issue..."
-    style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:6px; height:90px;"></textarea>
-
-    <button type="submit" style="
-        width:100%;
-        background:#0d47a1;
-        color:white;
-        padding:14px;
-        margin-top:20px;
-        border:none;
-        border-radius:8px;
-        font-size:18px;
-        cursor:pointer;
-        transition:0.3s;
-    "
-    onmouseover="this.style.background='#08306b'"
-    onmouseout="this.style.background='#0d47a1'">
-        Submit Request
-    </button>
-
-</form>
-</div>
-
-
-
-
-
-
-<!-- Link to the New Modern Page -->
-<div style="text-align:center; margin-top:20px;">
-    <a href="home2.html" 
-       style="background:#28a745; padding:12px 25px; color:white; border-radius:8px; 
-              text-decoration:none; font-size:18px; display:inline-block;">
-        Open Modern Website (New Version)
-    </a>
-</div>
