@@ -16,6 +16,85 @@
         Naveed Electrician Services
     </h1>
 
+
+
+
+
+
+
+
+
+<!-- ===== Image Slideshow Section ===== -->
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <img src="images/work1.png" class="slide-img">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/work2.png" class="slide-img">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/work3.png" class="slide-img">
+    </div>
+
+</div>
+
+<style>
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slide-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation-name: fadeEffect;
+    animation-duration: 1.2s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+</style>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }    
+
+    slides[slideIndex - 1].style.display = "block";  
+    setTimeout(showSlides, 3000);
+}
+</script>
+
+
+
+
+
+
+    
 </header>
 
 
